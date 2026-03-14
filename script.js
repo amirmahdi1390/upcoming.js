@@ -62,7 +62,11 @@ function folderChecker(folderPath) {
                 let filePath = path.dirname(fullPath)
                 let rel = path.relative("src",filePath).replace(/\\/g, "/")
                if (rel ==""){
-                console.log("notf oun d found");
+                let notfoundOBJ = {
+                    path : "*",
+                    file:fullPath
+                }
+                routesObject.push(notfoundOBJ)
                 
                }
             }
