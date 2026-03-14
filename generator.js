@@ -1,6 +1,4 @@
 export function generateRoutesModule(routes) {
-
-   
     const imports = routes.map((route, index) => {
       return `const Page${index} = lazy(() => import('${route.file}'))`
     }).join('\n')
