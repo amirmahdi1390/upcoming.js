@@ -1,5 +1,6 @@
 import fs from "fs"
 import path from "path"
+import chalk from "chalk"
 export function scanRoutes(routesDir) {
    
     let routesObject = [
@@ -47,7 +48,6 @@ export function scanRoutes(routesDir) {
                     
                     }).filter(Boolean)
                     let finallr =`/${ routes.join("/")}`
-                    console.log(finallr);
                     
                     
                     let routeOBJ = {
@@ -79,6 +79,7 @@ export function scanRoutes(routesDir) {
     }
     
     folderChecker(routesDir)
+    console.log(chalk.blue("routes created successfully"));
     
     return routesObject
     

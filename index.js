@@ -33,7 +33,7 @@ export default function upcoming(options = {}) {
       }
     },
 
-    // ✅ ADD THIS — watches for new files and deleted files
+   
     configureServer(server) {
       const reload = (filePath) => {
         const isPageFile = /page\.(jsx?|tsx?)$/.test(filePath)
@@ -52,10 +52,10 @@ export default function upcoming(options = {}) {
         }
       }
 
-      // 'add' triggers when a new file is created
+     
       server.watcher.on('add', reload)
 
-      // 'unlink' triggers when a file is deleted
+    
       server.watcher.on('unlink', reload)
     },
 
