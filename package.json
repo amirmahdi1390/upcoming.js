@@ -7,18 +7,33 @@
     ".": "./index.js",
     "./runtime": "./runtime/Router.jsx"
   },
-  
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "keywords": ["vite", "react", "file-based-routing", "router","next.js","upcoming","upcoming.js","next","js","javascript","node","node.js","react-router","react-router-dom","next.js-routing"],
+  "keywords": [
+    "vite",
+    "react",
+    "file-based-routing",
+    "router",
+    "next.js",
+    "upcoming",
+    "upcoming.js",
+    "next",
+    "js",
+    "javascript",
+    "node",
+    "node.js",
+    "react-router",
+    "react-router-dom",
+    "next.js-routing"
+  ],
   "author": "Amir.Mahdi Sultani",
   "license": "ISC",
   "description": "a plugin package for react vite for adding the file and folder based routing feature based according to nextjs",
   "peerDependencies": {
     "react": ">=18",
     "react-dom": ">=18",
-    "react-router": ">=7",
+    "react-router": "^7.13.1",
     "vite": ">=4"
-    }
+  }
 }

@@ -3,7 +3,6 @@ import { scanRoutes } from './scanner.js'
 import { generateRoutesModule } from './generator.js'
 
 const VIRTUAL_MODULE_ID = 'virtual:upcoming'
-
 const RESOLVED_ID = '\0virtual:upcoming'
 
 export default function upcoming(options = {}) {
@@ -15,7 +14,6 @@ export default function upcoming(options = {}) {
   let generatedModule = ''
 
   return {
-  
     name: 'upcoming.js',
 
     buildStart() {
@@ -35,27 +33,46 @@ export default function upcoming(options = {}) {
       }
     },
 
- 
+    // ✅ ADD THIS — watches for new files and deleted files
+    configureServer(server) {
+      const reload = (filePath) => {
+        const isPageFile = /page\.(jsx?|tsx?)$/.test(filePath)
+        const isNotFoundFile = /notfound\.(jsx?|tsx?)$/.test(filePath)
+
+        if (isPageFile || isNotFoundFile) {
+          const routes = scanRoutes(routesDir)
+          generatedModule = generateRoutesModule(routes)
+
+          const virtualModule = server.moduleGraph.getModuleById(RESOLVED_ID)
+          if (virtualModule) {
+            server.moduleGraph.invalidateModule(virtualModule)
+          }
+
+          server.ws.send({ type: 'full-reload' })
+        }
+      }
+
+      // 'add' triggers when a new file is created
+      server.watcher.on('add', reload)
+
+      // 'unlink' triggers when a file is deleted
+      server.watcher.on('unlink', reload)
+    },
+
     handleHotUpdate({ file, server }) {
       const isInRoutesDir = file.startsWith(routesDir)
       const isPageFile = /page\.(jsx?|tsx?)$/.test(file)
       const isNotFoundFile = /notfound\.(jsx?|tsx?)$/.test(file)
 
       if (isInRoutesDir && (isPageFile || isNotFoundFile)) {
-
-       
         const routes = scanRoutes(routesDir)
-
-       
         generatedModule = generateRoutesModule(routes)
 
-       
         const virtualModule = server.moduleGraph.getModuleById(RESOLVED_ID)
         if (virtualModule) {
           server.moduleGraph.invalidateModule(virtualModule)
         }
 
-     
         server.ws.send({ type: 'full-reload' })
       }
     }

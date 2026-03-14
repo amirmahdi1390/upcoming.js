@@ -78,7 +78,7 @@ export function scanRoutes(routesDir) {
     
     }
     
-    folderChecker(directory)
+    folderChecker(routesDir)
     
     return routesObject
     
