@@ -1,7 +1,7 @@
-let fs = require("fs")
-let path = require("path")
-function scanRoutes(routesDir) {
-    let directory = path.join(routesDir)
+import fs from "fs"
+import path from "path"
+export function scanRoutes(routesDir) {
+   
     let routesObject = [
        
     ]
@@ -60,7 +60,7 @@ function scanRoutes(routesDir) {
                
                 if(fileName == "notfound.js" || fileName == "notfound.jsx" ){
                     let filePath = path.dirname(fullPath)
-                    let rel = path.relative("routesDir",filePath).replace(/\\/g, "/")
+                    let rel = path.relative(routesDir,filePath).replace(/\\/g, "/")
                    if (rel ==""){
                     let notfoundOBJ = {
                         path : "*",
@@ -84,4 +84,3 @@ function scanRoutes(routesDir) {
     
     
 }
-module.exports = scanRoutes
