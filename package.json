@@ -1,6 +1,6 @@
 {
   "name": "upcoming.js",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "main": "index.js",
   "type": "module",
   "exports": {
@@ -30,13 +30,13 @@
   "author": "Amir.Mahdi Sultani",
   "license": "MIT",
   "description": "a plugin package for react vite for adding the file and folder based routing feature based according to nextjs",
+  "dependencies": {
+    "react-router": "^7.13.1",
+    "chalk": "^5.6.2"
+  },
   "peerDependencies": {
     "react": ">=18",
     "react-dom": ">=18",
-    "react-router": "^7.13.1",
     "vite": ">=4"
-  },
-  "dependencies": {
-    "chalk": "^5.6.2"
   }
 }
