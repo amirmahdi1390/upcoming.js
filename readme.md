@@ -35,7 +35,7 @@
 
 ---
 
-## Why I Built This
+## Why We Built This
 
 I love Next.js's file-based routing. The idea of just creating a folder and a file and having a route automatically appear — no configuration, no imports, no `<Route>` declarations — is genuinely brilliant.
 
