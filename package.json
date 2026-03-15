@@ -28,7 +28,7 @@
     "next.js-routing"
   ],
   "author": "Amir.Mahdi Sultani",
-  "license": "ISC",
+  "license": "MIT",
   "description": "a plugin package for react vite for adding the file and folder based routing feature based according to nextjs",
   "peerDependencies": {
     "react": ">=18",
