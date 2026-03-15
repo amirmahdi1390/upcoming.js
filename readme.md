@@ -1,8 +1,5 @@
-
-
 <div align="center">
 <br />
-
 
 ██╗   ██╗██████╗  ██████╗ ██████╗ ███╗   ███╗██╗███╗   ██╗ ██████╗
 ██║   ██║██╔══██╗██╔════╝██╔═══██╗████╗ ████║██║████╗  ██║██╔════╝
@@ -19,19 +16,20 @@
 
 <br />
 
-
 [![npm version](https://img.shields.io/npm/v/upcoming.js?color=black&style=flat-square)](https://www.npmjs.com/package/upcoming.js)
 [![npm downloads](https://img.shields.io/npm/dm/upcoming.js?color=black&style=flat-square)](https://www.npmjs.com/package/upcoming.js)
 [![license](https://img.shields.io/npm/l/upcoming.js?color=black&style=flat-square)](https://github.com/amirmahdi390/upcoming.js/blob/main/LICENSE)
-[![github](https://img.shields.io/badge/github-upcoming.js-black?style=flat-square&logo=github)](https://github.com/amirmahdi390/upcoming.js)
+[![github](https://img.shields.io/badge/github-upcoming.js-black?style=flat-square&logo=github)](https://github.com/amirmahdi1390/upcoming.js)
 
 <br />
 
 </div>
 ---
 
+
 ---
 
+---
 
 ---
 
@@ -106,12 +104,12 @@ import react from '@vitejs/plugin-react'
 import upcoming from 'upcoming.js'
 
 export default defineConfig({
-  plugins: [
-    react(),
-    upcoming()
-  ],
+  plugins: [react(), upcoming()],
   resolve: {
-    dedupe: ['react', 'react-dom', 'react-router']
+    dedupe: ['react', 'react-dom', 'react-router'] // (optional) for better performance
+  },
+  optimizeDeps: {
+    include: ['react-router'] // (optional) for better performance
   }
 })
 ```
@@ -290,30 +288,30 @@ src/
 
 ## Requirements
 
-| Dependency | Version |
-| ---------- | ------- |
-| React      | ≥ 18   |
-| React DOM  | ≥ 18   |
-| Vite       | ≥ 4    |
+| Dependency   | Version |
+| ------------ | ------- |
+| React        | ≥ 18   |
+| React DOM    | ≥ 18   |
+| Vite         | ≥ 4    |
+| react-router | ≥ 7    |
 
 ---
 
 ## Links
 
 * 📦 [npm](https://www.npmjs.com/package/upcoming.js)
-* 🐙 [GitHub](https://github.com/amirmahdi390/upcoming.js)
+* 🐙 [GitHub](https://github.com/amirmahdi1390/upcoming.js)
 
 ---
 
 ## License
 
-MIT © [Amir.Mahdi Sultani](https://github.com/amirmahdi390)
+MIT © [Amir.Mahdi Sultani](https://github.com/amirmahdi1390)
 
 ---
 
 <div align="center">
 
-
-**If upcoming.js saved you time, give it a ⭐ on [GitHub](https://github.com/amirmahdi390/upcoming.js)**
+**If upcoming.js saved you time, give it a ⭐ on [GitHub](https://github.com/amirmahdi1390/upcoming.js)**
 
 </div>
